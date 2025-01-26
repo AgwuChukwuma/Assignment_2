@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Adopt Your Favorite Animal</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script>
+      // Function to handle form submission
+      function handleFormSubmit(event) {
+        event.preventDefault(); // Prevent the default form submission
+
+        // Get the values from the form
+        const name = document.getElementById("name").value;
+        const animal = document.getElementById("animal").value;
+        const reason = document.getElementById("reason").value;
+
+        // Display the information in an alert
+        alert(
+          `Thank you for your submission, ${name}!\n\nYou have selected to adopt a ${animal}.\n\nReason: ${reason}`
+        );
+      }
+    </script>
+  </head>
+  <body>
+    <div class="form-container">
+      <h1>Adopt Your Favorite Animal</h1>
+      <form action="#" method="post" onsubmit="handleFormSubmit(event)">
+        <label for="name">Your Name:</label>
+        <input
+          type="text"
+          id="name"
+          name="name"
+          required
+          placeholder="Enter your name"
+        />
+
+        <label for="animal">Choose an Animal:</label>
+        <select id="animal" name="animal" required>
+          <option value="dog">Dog</option>
+          <option value="cat">Cat</option>
+          <option value="rabbit">Rabbit</option>
+          <option value="parrot">Parrot</option>
+          <option value="hamster">Hamster</option>
+        </select>
+
+        <label for="reason">Why do you want to adopt this animal?</label>
+        <textarea
+          id="reason"
+          name="reason"
+          rows=""
+          4
+          placeholder="Tell us why..."
+          required
+        ></textarea>
+
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+  </body>
+</html>
